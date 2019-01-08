@@ -13,7 +13,6 @@ import java.util.List;
 @Controller
 public class PostController {
 
-    @ResponseBody
     @GetMapping("/posts")
     public String posts (Model model){
         List<Post> posts = new ArrayList<>();
@@ -29,7 +28,6 @@ public class PostController {
         return "index";
     }
 
-    @ResponseBody
     @GetMapping("/posts/{id}")
     public String postsId (Model model){
         Post bob = new Post("Bob is lame", "Everyone thinks so");
@@ -37,13 +35,11 @@ public class PostController {
         return "show";
     }
 
-    @ResponseBody
     @GetMapping("/posts/create")
     public String createPost (){
         return "view the form for creating a post";
     }
 
-    @ResponseBody
     @PostMapping("/posts/create")
     public String creatingPost (){
         return "Create a new post";
