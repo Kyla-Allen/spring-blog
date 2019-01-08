@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<head th:replace="head">
 </head>
 <body>
+
+    <nav th:replace="navbar"> </nav>
+    <header th:replace="header"></header>
 
     <h3> Number Guessed: <span th:text = "${guess}"> Error </span></h3>
     <h3> Number Generated: <span th:text=" ${number}"> Error </span> </h3>
     <div th:if="${correct}">
         <p> You guessed correctly!</p>
     </div>
+
+    <footer th:replace="footer"></footer>
 
 
 </body>
