@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts: Index</title>
+</head>
+<body>
+
+    <nav th:replace="navbar"/>
+    <header th:replace="header"/>
+
+    <div th:each="post : ${posts}">
+
+       <div class="card">
+           <div class="card-body">
+               <h3 class= "card-title" th:text="${post.getTitle()}"></h3>
+               <p class="card-text" th:text="${post.getBody()}"></p>
+           </div>
+       </div>
+    </div>
+
+    <footer th:replace="footer"/>
+
+
+
+
+</body>
+</html>
