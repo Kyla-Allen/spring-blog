@@ -30,6 +30,10 @@ public class PostService {
         return post;
     }
 
+    public void save (Post newPost){
+        create(newPost); //What's the point of this method....?
+    }
+
 
     //For testing purposes.....
     public void createPosts(){
