@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Posts: Index</title>
-</head>
+<head  th:replace="partials :: head"/>
+
 <body>
 
-    <nav th:replace="navbar"/>
-    <header th:replace="header"/>
+    <nav th:replace="partials :: navbar"> </nav>
+    <header th:replace="partials :: header"></header>
 
     <div th:each="post : ${posts}">
 
        <div class="card">
            <div class="card-body">
-               <h3 class= "card-title" th:text="${post.getTitle()}"></h3>
+               <h3 class= "card-title"><a th:href=" 'posts/' + ${post.getId()}"><span class="card-link" th:text="${post.getTitle()}"></span></a> </h3>
                <p class="card-text" th:text="${post.getBody()}"></p>
            </div>
        </div>
     </div>
 
-    <footer th:replace="footer"/>
+    <footer th:replace="partials :: footer"/>
 
 
 
