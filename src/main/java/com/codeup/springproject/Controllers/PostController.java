@@ -5,6 +5,7 @@ import com.codeup.springproject.Services.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
@@ -30,8 +31,9 @@ public class PostController {
     }
 
     @GetMapping("/posts/{id}")
-    public String postsId (Model model){
-        model.addAttribute("post", postService.findById(1));
+    public String postsId (@PathVariable int id, Model model){
+        model.addAttribute("id", id);
+        model.addAttribute("post", postService.findById(id));
         return "show";
     }
 

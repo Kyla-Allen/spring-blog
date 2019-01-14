@@ -11,7 +11,7 @@
 
        <div class="card">
            <div class="card-body">
-               <h3 class= "card-title" th:text="${post.getTitle()}"></h3>
+               <h3 class= "card-title"><a href="/posts/${post.getId()}"><span class="card-link" th:text="${post.getTitle()}"></span></a> </h3>
                <p class="card-text" th:text="${post.getBody()}"></p>
            </div>
        </div>
