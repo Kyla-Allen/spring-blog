@@ -13,31 +13,25 @@ import java.util.List;
 @Controller
 public class PostController {
 
+
+    //Service Stuff ==========================================
     private final PostService postService;
 
     public PostController(PostService postService){
         this.postService = postService;
     }
 
+
+    //Mapping Stuff =============================================
     @GetMapping("/posts")
     public String posts (Model model){
-        List<Post> posts = new ArrayList<>();
-
-        //Posts
-        Post one = new Post("Puppies are cute", "so are kittens!!!");
-        Post two = new Post("Furbies are evil", "They're in your house");
-
-        posts.add(one);
-        posts.add(two);
-
-        model.addAttribute("posts", posts);
+        model.addAttribute("posts", postService.findAll());
         return "/posts/index";
     }
 
     @GetMapping("/posts/{id}")
     public String postsId (Model model){
-        Post bob = new Post("Bob is lame", "Everyone thinks so");
-        model.addAttribute("post", bob);
+        model.addAttribute("post", postService.findById(1));
         return "show";
     }
 
