@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head  th:replace="partials :: head"/>
-
 <body>
 
     <nav th:replace="partials :: navbar"> </nav>
     <header th:replace="partials :: header"></header>
 
-    <div class="card">
-        <div class="card-body">
-            <h3 class= "card-title" th:text="${post.title}"></h3>
-            <p class="card-text" th:text="${post.body}"></p>
-        </div>
-    </div>
-
+    <h1> HOME PAGE </h1>
 
     <footer th:replace="partials :: footer"/>
-
-
-
 
 </body>
 </html>

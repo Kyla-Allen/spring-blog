@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Posts: Index</title>
-</head>
+<head  th:replace="partials :: head"/>
+
 <body>
 
-    <nav th:replace="navbar"/>
-    <header th:replace="header"/>
+    <nav th:replace="partials :: navbar"> </nav>
+    <header th:replace="partials :: header"></header>
 
     <div th:each="post : ${posts}">
 
@@ -19,7 +17,7 @@
        </div>
     </div>
 
-    <footer th:replace="footer"/>
+    <footer th:replace="partials :: footer"/>
 
 
 

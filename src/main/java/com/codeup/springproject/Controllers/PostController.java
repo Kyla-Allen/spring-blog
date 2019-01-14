@@ -1,11 +1,10 @@
-package Controllers;
+package com.codeup.springproject.Controllers;
 
-import Model.Post;
+import com.codeup.springproject.Model.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +24,7 @@ public class PostController {
         posts.add(two);
 
         model.addAttribute("posts", posts);
-        return "index";
+        return "/posts/index";
     }
 
     @GetMapping("/posts/{id}")
