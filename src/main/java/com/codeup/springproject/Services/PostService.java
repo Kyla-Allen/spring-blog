@@ -3,12 +3,18 @@ package com.codeup.springproject.Services;
 import com.codeup.springproject.Model.Post;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class PostService {
 
     private List<Post> posts;
+
+    public PostService() {
+        posts = new ArrayList<>();
+        createPosts();
+    }
 
     public List<Post> findAll(){
         return posts;
@@ -27,7 +33,8 @@ public class PostService {
 
     //For testing purposes.....
     public void createPosts(){
-        Post post1 = new Post("Title 1", "Blah blah blah");
-        Post post2 = new Post("Title 2", "Content for Title 2");
+        create(new Post("Title 1", "Content for title 1"));
+        create(new Post("Title 2", "Content for title 2"));
+        create(new Post("Title 3", "THE WHISTLING GYPSY ROOOOOOOVEEERRR"));
     }
 }

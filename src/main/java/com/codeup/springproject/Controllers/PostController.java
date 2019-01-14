@@ -34,7 +34,7 @@ public class PostController {
     public String postsId (@PathVariable int id, Model model){
         model.addAttribute("id", id);
         model.addAttribute("post", postService.findById(id));
-        return "show";
+        return "posts/show";
     }
 
     @GetMapping("/posts/create")
