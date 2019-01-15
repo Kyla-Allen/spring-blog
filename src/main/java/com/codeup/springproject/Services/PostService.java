@@ -31,7 +31,7 @@ public class PostService {
     }
 
     public void save (Post newPost){
-        create(newPost); //What's the point of this method....?
+        create(newPost);
     }
 
 
