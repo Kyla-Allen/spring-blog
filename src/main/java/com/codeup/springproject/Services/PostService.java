@@ -30,6 +30,18 @@ public class PostService {
         return post;
     }
 
+    public void save (Post newPost){
+        create(newPost);
+    }
+
+    public Post edit(Post post) {
+        post.setId(post.getId()-1);
+        posts.set(post.getId(),post);
+//        Post pp = posts.get(post.getId() - 1);
+//        pp.setTitle(post.getTitle());
+//        pp.setBody(post.getBody());
+        return post;
+    }
 
     //For testing purposes.....
     public void createPosts(){
