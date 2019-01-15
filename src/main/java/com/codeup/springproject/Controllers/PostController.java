@@ -5,6 +5,7 @@ import com.codeup.springproject.Services.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,7 +28,7 @@ public class PostController {
     @GetMapping("/posts")
     public String posts (Model model){
         model.addAttribute("posts", postService.findAll());
-        return "/posts/index";
+        return "posts/index";
     }
 
     @GetMapping("/posts/{id}")
@@ -39,13 +40,14 @@ public class PostController {
 
     @GetMapping("/posts/create")
     public String createPost (Model model){
-        model.addAttribute("newPost", new Post());
-        return "/posts/create";
+        model.addAttribute("post", new Post());
+        return "posts/create";
     }
 
     @PostMapping("/posts/create")
-    public String creatingPost (){
-        return "Create a new post";
+    public String creatingPost (@ModelAttribute Post post){
+        postService.create(post);
+        return "redirect:/posts";
     }
 
 
