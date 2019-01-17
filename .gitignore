@@ -24,4 +24,5 @@
 /nbdist/
 /.nb-gradle/
 
+/Users/themightyflorp/IdeaProjects/spring-project/src/main/resources/application.properties
 src/main/resources/application.properties

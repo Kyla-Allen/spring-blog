@@ -1,10 +1,20 @@
 package com.codeup.springproject.Model;
 
+import javax.persistence.*;
+
+@Entity
 public class Post {
-    private String title;
-    private String body;
+
+    @Id
+    @GeneratedValue
     private int id;
 
+    @Column(length = 100, nullable=false)
+    private String title;
+    @Column(length = 100000, nullable=false)
+    private String body;
+
+    //Constructors
     public Post(){}
 
     public Post(String title, String body) {
@@ -18,6 +28,7 @@ public class Post {
     }
 
 
+    //Getters and Setters
     public int getId() {
         return id;
     }
